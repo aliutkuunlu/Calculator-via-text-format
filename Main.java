@@ -1,5 +1,3 @@
-package ekinoks;
-
 import java.io.BufferedReader; 
 import java.io.IOException; 
 import java.io.InputStreamReader; 
@@ -28,12 +26,12 @@ public class Main
         int firstNumber, secondNumber, result;
     	while(control==1)
     	{
-    		System.out.println("Programı başlatmak için 1 yazıp enter tuşuna basınız.");
-    		System.out.println("Programı sonlandırmak için 0 yazıp enter tuşuna basınız.");
+    		System.out.println("ProgramÃ½ baÃ¾latmak iÃ§in 1 yazÃ½p enter tuÃ¾una basÃ½nÃ½z.");
+    		System.out.println("ProgramÃ½ sonlandÃ½rmak iÃ§in 0 yazÃ½p enter tuÃ¾una basÃ½nÃ½z.");
     		String temp = reader.readLine();
     		if(!(temp.equals("1") || temp.equals("0")))
     		{
-    			System.out.println("Lütfen 1 ya da 0 giriniz");
+    			System.out.println("LÃ¼tfen 1 ya da 0 giriniz");
     			System.out.println();
     			System.out.println();
     			String [] refresh = null;
@@ -43,23 +41,23 @@ public class Main
     		control = Integer.parseInt(temp);    		
     		if(control == 0)
     		{
-    			System.out.println("İyi günler..");
+    			System.out.println("Ãyi gÃ¼nler..");
     			break;
     		}
     			
-    		System.out.println("Lütfen 1 ile 999.999.999 arasında bir sayıyı kelimeler arasında boşluk olacak şekilde yazınız.");
+    		System.out.println("LÃ¼tfen 1 ile 999.999.999 arasÃ½nda bir sayÃ½yÃ½ kelimeler arasÃ½nda boÃ¾luk olacak Ã¾ekilde yazÃ½nÃ½z.");
     		String number1 = reader.readLine();
     		firstNumber = getNumber(number1, rakamMap, onlukMap, basamakMap);
-    		System.out.println("Lütfen 1 ile 999.999.999 arasında bir sayıyı kelimeler arasında boşluk olacak şekilde yazınız.");
+    		System.out.println("LÃ¼tfen 1 ile 999.999.999 arasÃ½nda bir sayÃ½yÃ½ kelimeler arasÃ½nda boÃ¾luk olacak Ã¾ekilde yazÃ½nÃ½z.");
     		String number2 = reader.readLine();
     		secondNumber =  getNumber(number2, rakamMap, onlukMap, basamakMap);
     		
     		
     		
-    		System.out.println("Bölme işlemi için 1");
-    		System.out.println("Çarpma işlemi için 2");
-    		System.out.println("Toplama işlemi için 3");
-    		System.out.println("çıkarma işlemi için 4 giriniz.");
+    		System.out.println("BÃ¶lme iÃ¾lemi iÃ§in 1");
+    		System.out.println("Ã‡arpma iÃ¾lemi iÃ§in 2");
+    		System.out.println("Toplama iÃ¾lemi iÃ§in 3");
+    		System.out.println("Ã§Ã½karma iÃ¾lemi iÃ§in 4 giriniz.");
     		System.out.println("******************");
     		System.out.println("******************");
     		String temp2 = reader.readLine();
@@ -83,11 +81,11 @@ public class Main
     public static void convertToText(int result, HashMap<Integer, String> reverseRakamMap, HashMap<Integer, String> reverseOnlukMap)
     {
     	/*
-    	 * Bu method işlem sonucunda bulunan sayının tekrar text haline dönmesini sağlar.
+    	 * Bu method iÃ¾lem sonucunda bulunan sayÃ½nÃ½n tekrar text haline dÃ¶nmesini saÃ°lar.
     	 */
     	if(result>999999999)
     	{
-    		System.out.println("Sonuç sınırların dışında.");
+    		System.out.println("SonuÃ§ sÃ½nÃ½rlarÃ½n dÃ½Ã¾Ã½nda.");
     		return;
     	}
     	if(result <0)
@@ -101,33 +99,33 @@ public class Main
     	int size = value.length();
     	if(size<=3)
     	{
-    		yüzlükYazdır(value, reverseRakamMap, reverseOnlukMap);
+    		yÃ¼zlÃ¼kYazdÃ½r(value, reverseRakamMap, reverseOnlukMap);
     	}
     	else if (size >3 && size <7)
     	{
     		if(size == 6)
     		{
     			String temp = value.substring(0, 3);
-        		yüzlükYazdır(temp, reverseRakamMap, reverseOnlukMap);
+        		yÃ¼zlÃ¼kYazdÃ½r(temp, reverseRakamMap, reverseOnlukMap);
         		System.out.print("bin ");
         		temp = value.substring(3, 6);
-        		yüzlükYazdır(temp, reverseRakamMap, reverseOnlukMap);
+        		yÃ¼zlÃ¼kYazdÃ½r(temp, reverseRakamMap, reverseOnlukMap);
     		}
     		else if(size ==5)
     		{
     			String temp = value.substring(0, 2);
-    			yüzlükYazdır(temp, reverseRakamMap, reverseOnlukMap);
+    			yÃ¼zlÃ¼kYazdÃ½r(temp, reverseRakamMap, reverseOnlukMap);
     			System.out.print("bin ");
     			temp = value.substring(2, 5);
-    			yüzlükYazdır(temp, reverseRakamMap, reverseOnlukMap);
+    			yÃ¼zlÃ¼kYazdÃ½r(temp, reverseRakamMap, reverseOnlukMap);
     		}
     		else
     		{
     			String temp = value.substring(0, 1);
-    			yüzlükYazdır(temp, reverseRakamMap, reverseOnlukMap);
+    			yÃ¼zlÃ¼kYazdÃ½r(temp, reverseRakamMap, reverseOnlukMap);
     			System.out.print("bin ");
     			temp = value.substring(1, 4);
-    			yüzlükYazdır(temp, reverseRakamMap, reverseOnlukMap);
+    			yÃ¼zlÃ¼kYazdÃ½r(temp, reverseRakamMap, reverseOnlukMap);
     		}    		
     	}
     	else
@@ -135,44 +133,44 @@ public class Main
     		if(size == 9)
     		{
     			String temp = value.substring(0, 3);
-    			yüzlükYazdır(temp, reverseRakamMap, reverseOnlukMap);
+    			yÃ¼zlÃ¼kYazdÃ½r(temp, reverseRakamMap, reverseOnlukMap);
     			System.out.print("milyon ");
     			temp = value.substring(3, 6);
     			if(!temp.equals("000"))
     			{
-    				yüzlükYazdır(temp, reverseRakamMap, reverseOnlukMap);
+    				yÃ¼zlÃ¼kYazdÃ½r(temp, reverseRakamMap, reverseOnlukMap);
     				System.out.print("bin ");
     			}
     			temp = value.substring(6, 9);
-    			yüzlükYazdır(temp, reverseRakamMap, reverseOnlukMap);
+    			yÃ¼zlÃ¼kYazdÃ½r(temp, reverseRakamMap, reverseOnlukMap);
     		}
     		else if (size ==8)
     		{
     			String temp = value.substring(0, 2);
-    			yüzlükYazdır(temp, reverseRakamMap, reverseOnlukMap);
+    			yÃ¼zlÃ¼kYazdÃ½r(temp, reverseRakamMap, reverseOnlukMap);
     			System.out.print("milyon ");
     			temp = value.substring(2, 5);
     			if(!temp.equals("000"))
     			{
-    				yüzlükYazdır(temp, reverseRakamMap, reverseOnlukMap);
+    				yÃ¼zlÃ¼kYazdÃ½r(temp, reverseRakamMap, reverseOnlukMap);
     				System.out.print("bin ");
     			}
     			temp = value.substring(5, 8);
-    			yüzlükYazdır(temp, reverseRakamMap, reverseOnlukMap);
+    			yÃ¼zlÃ¼kYazdÃ½r(temp, reverseRakamMap, reverseOnlukMap);
     		}
     		else
     		{
     			String temp = value.substring(0, 1);
-    			yüzlükYazdır(temp, reverseRakamMap, reverseOnlukMap);
+    			yÃ¼zlÃ¼kYazdÃ½r(temp, reverseRakamMap, reverseOnlukMap);
     			System.out.print("milyon ");
     			temp = value.substring(1, 4);
     			if(!temp.equals("000"))
     			{
-    				yüzlükYazdır(temp, reverseRakamMap, reverseOnlukMap);
+    				yÃ¼zlÃ¼kYazdÃ½r(temp, reverseRakamMap, reverseOnlukMap);
     				System.out.print("bin ");
     			}
     			temp = value.substring(4, 7);
-    			yüzlükYazdır(temp, reverseRakamMap, reverseOnlukMap);
+    			yÃ¼zlÃ¼kYazdÃ½r(temp, reverseRakamMap, reverseOnlukMap);
     		}
     	}
     		
@@ -183,14 +181,14 @@ public class Main
     public static int calculate(int firstNumber, int secondNumber, int operation ) throws IOException
     {
     	/*
-    	 * Bu method kullanıcının isteğine göre hangi işlemin yapılacağına karar verir ve işlemin sonucunu döndürür.
+    	 * Bu method kullanÃ½cÃ½nÃ½n isteÃ°ine gÃ¶re hangi iÃ¾lemin yapÃ½lacaÃ°Ã½na karar verir ve iÃ¾lemin sonucunu dÃ¶ndÃ¼rÃ¼r.
     	 */
     	int result = 0;
     	if(operation == 1)
     	{
     		if(secondNumber == 0)
     		{
-    			System.out.println("Sıfıra bölünme hatası!!!");
+    			System.out.println("SÃ½fÃ½ra bÃ¶lÃ¼nme hatasÃ½!!!");
     			String [] refresh = null;
     			main(refresh);
     			System.exit(0);
@@ -229,7 +227,7 @@ public class Main
     		HashMap<String, Integer> basamakMap) throws IOException
     {
     	/*
-    	 * Bu method girilen textin sayı değerini döndürür.
+    	 * Bu method girilen textin sayÃ½ deÃ°erini dÃ¶ndÃ¼rÃ¼r.
     	 */
     	ArrayList<Integer> results = new ArrayList<Integer>();
     	int i;
@@ -251,7 +249,7 @@ public class Main
     		{
     			if(result ==0)
     				result =1;
-    			if(tokens[i].equals("yüz"))
+    			if(tokens[i].equals("yÃ¼z"))
     			{
     				result *= basamakMap.get(tokens[i]);
     			}
@@ -264,7 +262,7 @@ public class Main
     		}
     		else
     		{
-    			System.out.println("Yalnış düzende veri girildi.!!!");
+    			System.out.println("YalnÃ½Ã¾ dÃ¼zende veri girildi.!!!");
     			String [] refresh = null;
     			main(refresh);
     			System.exit(0);
@@ -294,25 +292,25 @@ public class Main
     public static void createBasamakMap(HashMap<String, Integer> basamakMap)
     {
     	/*
-    	 * Bu method milyona kadar dahil olan yazıları sayıya çevirmekte kullanılacak olan sayısal değerleri tutan HashMap'in elemanlarını ekler.
+    	 * Bu method milyona kadar dahil olan yazÃ½larÃ½ sayÃ½ya Ã§evirmekte kullanÃ½lacak olan sayÃ½sal deÃ°erleri tutan HashMap'in elemanlarÃ½nÃ½ ekler.
     	 */
     
-    	basamakMap.put("yüz", 100);
+    	basamakMap.put("yÃ¼z", 100);
     	basamakMap.put("bin", 1000);
     	basamakMap.put("milyon", 1000000);
     }
     public static void createOnlukMap(HashMap<String, Integer> onlukMap)
     {
     	/*
-    	 * Bu method 90 a kadar olan onun katlarının sayı karşılığını alabilmek için oluşturalan HashMap'in elemanlarını ekler.
+    	 * Bu method 90 a kadar olan onun katlarÃ½nÃ½n sayÃ½ karÃ¾Ã½lÃ½Ã°Ã½nÃ½ alabilmek iÃ§in oluÃ¾turalan HashMap'in elemanlarÃ½nÃ½ ekler.
     	 */
     	onlukMap.put("on", 10);
     	onlukMap.put("yirmi", 20);
     	onlukMap.put("otuz", 30);
-    	onlukMap.put("kırk", 40);
+    	onlukMap.put("kÃ½rk", 40);
     	onlukMap.put("elli", 50);
-    	onlukMap.put("altmış", 60);
-    	onlukMap.put("yetmiş", 70);
+    	onlukMap.put("altmÃ½Ã¾", 60);
+    	onlukMap.put("yetmiÃ¾", 70);
     	onlukMap.put("seksen", 80);
     	onlukMap.put("doksan", 90);
     	
@@ -320,36 +318,36 @@ public class Main
     public static void createRakamMap(HashMap<String, Integer> rakamMap)
     {
     	/*
-    	 * Bu method rakamların sayı karşılığını alabilmek için oluşturalan HashMap'in elemanlarını ekler.
+    	 * Bu method rakamlarÃ½n sayÃ½ karÃ¾Ã½lÃ½Ã°Ã½nÃ½ alabilmek iÃ§in oluÃ¾turalan HashMap'in elemanlarÃ½nÃ½ ekler.
     	 */
-    	rakamMap.put("sıfır", 0);
+    	rakamMap.put("sÃ½fÃ½r", 0);
     	rakamMap.put("bir", 1);
     	rakamMap.put("iki", 2);
-    	rakamMap.put("üç", 3);
-    	rakamMap.put("dört", 4);
-    	rakamMap.put("beş", 5);
-    	rakamMap.put("altı", 6);
+    	rakamMap.put("Ã¼Ã§", 3);
+    	rakamMap.put("dÃ¶rt", 4);
+    	rakamMap.put("beÃ¾", 5);
+    	rakamMap.put("altÃ½", 6);
     	rakamMap.put("yedi", 7);
     	rakamMap.put("sekiz", 8);
     	rakamMap.put("dokuz", 9);
     }     
-    public static void yüzlükYazdır(String result, HashMap<Integer, String> reverseRakamMap, HashMap<Integer, String> reverseOnlukMap)
+    public static void yÃ¼zlÃ¼kYazdÃ½r(String result, HashMap<Integer, String> reverseRakamMap, HashMap<Integer, String> reverseOnlukMap)
     {
     	/*
-    	 * Bu method 3 basamaklı olarak gelen sayının text olarak yazılmasını sağlar.
+    	 * Bu method 3 basamaklÃ½ olarak gelen sayÃ½nÃ½n text olarak yazÃ½lmasÃ½nÃ½ saÃ°lar.
     	 */
     	if(result.length()==3)
     	{
     		int temp = Character.getNumericValue(result.charAt(0));
     		if(temp ==1)
     		{
-    			System.out.print("yüz "); 			
+    			System.out.print("yÃ¼z "); 			
     		}
     		else
     		{
     			if(reverseRakamMap.containsKey(temp)&& temp!=0)
     			{
-    				System.out.print(reverseRakamMap.get(temp)+ " yüz ");
+    				System.out.print(reverseRakamMap.get(temp)+ " yÃ¼z ");
     			}
     		}
     		
@@ -390,30 +388,30 @@ public class Main
     public static void createReverseOnlukMap(HashMap<Integer, String> reverseOnlukMap)
     {
     	/*
-    	 * Bu method 90 a kadar olan onun katlarının yazı karşılığını alabilmek için oluşturalan HashMap'in elemanlarını ekler.
+    	 * Bu method 90 a kadar olan onun katlarÃ½nÃ½n yazÃ½ karÃ¾Ã½lÃ½Ã°Ã½nÃ½ alabilmek iÃ§in oluÃ¾turalan HashMap'in elemanlarÃ½nÃ½ ekler.
     	 */
     	reverseOnlukMap.put(10, "on");
     	reverseOnlukMap.put(20, "yirmi");
     	reverseOnlukMap.put(30, "otuz");
-    	reverseOnlukMap.put(40, "kırk");
+    	reverseOnlukMap.put(40, "kÃ½rk");
     	reverseOnlukMap.put(50, "elli");
-    	reverseOnlukMap.put(60, "altmış");
-    	reverseOnlukMap.put(70, "yetmiş");
+    	reverseOnlukMap.put(60, "altmÃ½Ã¾");
+    	reverseOnlukMap.put(70, "yetmiÃ¾");
     	reverseOnlukMap.put(80, "seksen");
     	reverseOnlukMap.put(90, "doksan");    	
     }
     public static void createReverseRakamMap(HashMap<Integer, String> reverseRakamMap)
     {
     	/*
-    	 * Bu method rakamların yazı karşılığını alabilmek için oluşturalan HashMap'in elemanlarını ekler.
+    	 * Bu method rakamlarÃ½n yazÃ½ karÃ¾Ã½lÃ½Ã°Ã½nÃ½ alabilmek iÃ§in oluÃ¾turalan HashMap'in elemanlarÃ½nÃ½ ekler.
     	 */
-    	reverseRakamMap.put(0, "sıfır");
+    	reverseRakamMap.put(0, "sÃ½fÃ½r");
     	reverseRakamMap.put(1, "bir");
     	reverseRakamMap.put(2, "iki");
-    	reverseRakamMap.put(3, "üç");
-    	reverseRakamMap.put(4, "dört");
-    	reverseRakamMap.put(5, "beş");
-    	reverseRakamMap.put(6, "altı");
+    	reverseRakamMap.put(3, "Ã¼Ã§");
+    	reverseRakamMap.put(4, "dÃ¶rt");
+    	reverseRakamMap.put(5, "beÃ¾");
+    	reverseRakamMap.put(6, "altÃ½");
     	reverseRakamMap.put(7, "yedi");
     	reverseRakamMap.put(8, "sekiz");
     	reverseRakamMap.put(9, "dokuz");
